@@ -3,36 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Juego de rompecabezas Cryptex donde debes descifrar enigmas para desbloquear letras.">
+    <meta name="description" content="Juego de rompecabezas Cryptex interactivo.">
     <title>Rompecabezas Cryptex</title>
-    <!-- Fuente personalizada desde Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Rompecabezas Cryptex</h1>
-        <h2 class="subtitulo">Descifra el código y desbloquea el cryptex</h2>
-    </header>
-    <main>
-        <section id="enigma">
-            <h2>Enigma</h2>
-            <p id="pregunta" aria-live="polite">Aquí se mostrará el enigma actual</p>
-            <label for="respuesta">Escribe tu respuesta:</label>
-            <input type="text" id="respuesta" placeholder="Escribe tu respuesta" aria-label="Campo de respuesta">
-            <button id="verificar" aria-label="Botón para verificar respuesta">Verificar</button>
-            <p style="font-size: 14px; color: #8b4513; margin-top: 10px;">Resuelve el enigma para desbloquear una letra.</p>
-        </section>
-        <section id="progreso">
+    <!-- Menú Principal -->
+    <section id="menu">
+        <div class="contenedor-menu">
+            <h1>¡Bienvenido al Rompecabezas Cryptex!</h1>
+            <p>El juego consiste en adivinar la combinación resolviendo acertijos.</p>
+            
+            <!-- Selección de Usuario Existente -->
+            <div>
+                <h3>Usuario Existente</h3>
+                <select id="seleccion-usuario">
+                    <option value="" disabled selected>Selecciona un usuario</option>
+                </select>
+                <label for="login-password">Contraseña:</label>
+                <input type="password" id="login-password" placeholder="Ingresa tu contraseña">
+            </div>
+
+            <!-- Registro de Nuevo Usuario -->
+            <div>
+                <h3>Nuevo Usuario</h3>
+                <input type="text" id="nuevo-nombre" placeholder="Nombre de usuario">
+                <input type="password" id="nuevo-password" placeholder="Contraseña">
+                <button id="registrar-usuario">Registrar</button>
+            </div>
+
+            <!-- Botón Continuar -->
+            <div>
+                <button id="continuar">Continuar</button>
+            </div>
+
+            <!-- Eliminar Usuario -->
+            <div>
+                <h3>Eliminar Usuario</h3>
+                <select id="eliminar-usuario">
+                    <option value="" disabled selected>Selecciona un usuario</option>
+                </select>
+                <button id="eliminar-usuario-btn">Eliminar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ventana de Enigmas -->
+<section id="enigmas" style="display: none;">
+    <div class="contenedor-enigmas">
+        <h2 id="enigma-titulo">Enigma</h2>
+        <p id="pregunta"></p>
+        <input type="text" id="respuesta" placeholder="Escribe tu respuesta">
+        <button id="verificar">Verificar</button>
+        <div id="progreso">
             <h3>Progreso</h3>
-            <div id="progreso-container" aria-live="polite" aria-label="Progreso de letras desbloqueadas"></div>
-        </section>
-    </main>
+            <div id="progreso-container"></div>
+        </div>
+        <!-- Nuevo Botón para Volver al Menú -->
+        <button id="volver-menu">Volver al Menú</button>
+    </div>
+</section>
+
+
     <footer>
-        <p>&copy; 2024 Cryptex Puzzle. Todos los derechos reservados.</p>
+        <p>&copy; 2024 Cryptex Puzzle. ¡Buena suerte!</p>
     </footer>
     <script src="script.js"></script>
 </body>
 </html>
-
 

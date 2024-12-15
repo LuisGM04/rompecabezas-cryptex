@@ -1,136 +1,49 @@
-/* Estilo general */
+/* Estilo General */
 body {
-    background: url('papiro.jpg') no-repeat center center fixed; /* Imagen de fondo */
-    background-size: cover; /* Ajusta la imagen para cubrir la pantalla */
     font-family: 'Georgia', serif;
+    background: url('papiro.jpg') no-repeat center center fixed;
+    background-size: cover;
     margin: 0;
-    padding: 0;
     color: #4a3f35;
-    line-height: 1.6;
 }
 
-/* Encabezado */
-header {
-    background-color: rgba(139, 69, 19, 0.9); /* Fondo semitransparente */
-    color: white;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-/* Contenedor principal */
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    gap: 20px;
-    padding: 20px; /* Para evitar que el contenido toque los bordes */
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
-    border-radius: 10px;
-}
-
-/* Sección de enigmas */
-#enigma {
-    border: 2px solid #8b4513;
+.contenedor-menu, .contenedor-enigmas {
+    background: rgba(255, 255, 255, 0.95);
     padding: 20px;
     border-radius: 10px;
-    background-color: #fff5e6;
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
-    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     max-width: 600px;
+    margin: 50px auto;
     text-align: center;
 }
 
-/* Campo de texto */
-#respuesta {
-    width: 90%;
-    font-size: 18px;
-    padding: 10px;
+h1, h3 {
+    font-family: 'Cinzel', serif;
+    color: #8b4513;
+}
+
+input, select, button {
+    margin-top: 10px;
+    padding: 8px;
     border: 1px solid #8b4513;
     border-radius: 5px;
-    margin-top: 10px;
+    width: 80%;
 }
 
-/* Botón */
-#verificar {
-    margin-top: 15px;
-    background-color: #c29f75;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#verificar:hover {
+button {
     background-color: #8b4513;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
-/* Progreso */
-#progreso {
-    border: 2px solid #8b4513;
-    padding: 15px;
-    border-radius: 10px;
-    background-color: #fff5e6;
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
-    width: 100%;
-    max-width: 500px;
-    text-align: center;
-}
-
-#progreso-container {
-    display: flex; /* Alineación horizontal */
-    justify-content: center;
-    gap: 10px; /* Espaciado entre las letras */
-    margin-top: 10px;
+button:hover {
+    background-color: #5a2d0c;
 }
 
 #progreso-container span {
-    display: inline-block;
     font-size: 24px;
-    font-weight: bold;
     margin: 0 5px;
-    color: #8b4513;
     border-bottom: 2px solid #8b4513;
-    width: 30px; /* Ancho fijo para las letras */
-    text-align: center;
 }
 
-/* Títulos */
-h1, h2, h3 {
-    font-family: 'Cinzel', serif;
-    color: #8b4513;
-}
-
-.subtitulo {
-    font-size: 24px;
-    font-family: 'Cinzel', serif;
-    color: #f5f0e1;
-    margin-top: 10px;
-}
-
-/* Párrafos */
-p {
-    font-family: 'Great Vibes', cursive;
-    font-size: 20px;
-    color: #4a3f35;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-    body {
-        font-size: 14px;
-    }
-
-    #enigma, #progreso {
-        width: 95%; /* Reduce los márgenes en móviles */
-    }
-
-    #respuesta {
-        width: 100%;
-    }
-}
