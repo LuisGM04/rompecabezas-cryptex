@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Juego de rompecabezas Cryptex donde debes descifrar enigmas para desbloquear letras.">
+    <title>Rompecabezas Cryptex</title>
+    <!-- Fuente personalizada desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Rompecabezas Cryptex</h1>
+        <h2 class="subtitulo">Descifra el código y desbloquea el cryptex</h2>
+    </header>
+    <main>
+        <section id="enigma">
+            <h2>Enigma</h2>
+            <p id="pregunta" aria-live="polite">Aquí se mostrará el enigma actual</p>
+            <label for="respuesta">Escribe tu respuesta:</label>
+            <input type="text" id="respuesta" placeholder="Escribe tu respuesta" aria-label="Campo de respuesta">
+            <button id="verificar" aria-label="Botón para verificar respuesta">Verificar</button>
+            <p style="font-size: 14px; color: #8b4513; margin-top: 10px;">Resuelve el enigma para desbloquear una letra.</p>
+        </section>
+        <section id="progreso">
+            <h3>Progreso</h3>
+            <div id="progreso-container" aria-live="polite" aria-label="Progreso de letras desbloqueadas"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Cryptex Puzzle. Todos los derechos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
