@@ -14,7 +14,7 @@
         <div class="contenedor-menu">
             <h1>¡Bienvenido al Rompecabezas Cryptex!</h1>
             <p>
-                Éste juego se ha creado única y exclusivamente para el uso de María Martin Morales, no está pensado para resolverse en un día ni va a ser posible, por lo que se requiere paciencia.
+                Este juego se ha creado única y exclusivamente para el uso de María Martin Morales, no está pensado para resolverse en un día ni va a ser posible, por lo que se requiere paciencia[...]
                 <br><br>
                 Puedes registrar y eliminar tantos usuarios como quieras, en todos se te irá guardando el proceso de la partida para que no pierdas los datos.
                 <br><br>
@@ -64,30 +64,40 @@
     </section>
 
     <!-- Ventana de Enigmas -->
-<section id="enigmas" style="display: none;">
-    <div class="contenedor-enigmas">
-        <h2 id="enigma-titulo">Enigma</h2>
-        <p id="pregunta"></p>
-        <input type="text" id="respuesta" placeholder="Escribe tu respuesta">
-        <button id="verificar">Verificar</button>
-        <button id="pista">Pista (3 disponibles)</button>
-        <div id="pista-mostrada" style="margin-top: 15px; font-weight: bold; color: #8b4513;"></div>
-        <div id="progreso">
-            <h3>Progreso</h3>
-            <div id="progreso-container"></div>
+    <section id="enigmas" style="display: none;">
+        <div class="contenedor-enigmas">
+            <h2 id="enigma-titulo">Enigma</h2>
+            <p id="pregunta"></p>
+            <input type="text" id="respuesta" placeholder="Escribe tu respuesta">
+            <button id="verificar">Verificar</button>
+            <button id="pista">Pista (3 disponibles)</button>
+            <div id="pista-mostrada" style="margin-top: 15px; font-weight: bold; color: #8b4513;"></div>
+            <div id="progreso">
+                <h3>Progreso</h3>
+                <div id="progreso-container"></div>
+            </div>
+            <button id="volver-menu">Volver al Menú</button>
         </div>
-        <button id="volver-menu">Volver al Menú</button>
-    </div>
-</section>
+    </section>
 
-    <!-- Ventana Final -->
-    <section id="final" style="display: none;">
-        <div class="contenedor-final">
-            <h2>¡Has completado el Cryptex!</h2>
+    <!-- Ventana de Ingreso de Palabra -->
+    <section id="ingreso-palabra" style="display: none;">
+        <div class="contenedor-ingreso-palabra">
+            <h2>Ingresa la palabra final</h2>
             <p>Esta es la palabra formada por signos:</p>
             <div id="palabra-signos"></div>
             <p>Relación de signos y letras:</p>
             <img src="signos.png" alt="Relación signos-letras">
+            <input type="text" id="palabra-final" placeholder="Ingresa la palabra">
+            <button id="finalizar">Finalizar</button>
+        </div>
+    </section>
+
+    <!-- Ventana de Código Final -->
+    <section id="codigo-final" style="display: none;">
+        <div class="contenedor-codigo-final">
+            <h2>¡Felicidades!</h2>
+            <p>El código numérico es: <strong>1452</strong></p>
             <button id="volver-menu-final">Volver al Menú</button>
         </div>
     </section>
