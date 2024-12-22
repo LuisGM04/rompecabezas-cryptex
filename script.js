@@ -1,8 +1,7 @@
-// script.js
 const palabraCryptex = "CONSTELACION";
 const signos = {
     A: "▲", B: "■", C: "●", D: "♦", E: "★", F: "♣", G: "♠", H: "☀", I: "☽",
-    J: "✈", K: "✂", L: "♫", M: "☁", N: "☂", O: "⚙", P: "⚡", Q: "♔", R: "♕",
+    J: "✈", K: "✂", L: "♪", M: "☁", N: "☂", O: "⚙", P: "⚡", Q: "♔", R: "♕",
     S: "☘", T: "⚓", U: "✿", V: "☯", W: "⚽", X: "✖", Y: "☎", Z: "✉"
 };
 
@@ -27,9 +26,9 @@ let progreso = [];
 let pistasRestantes = 3;
 let enigmaActual = 0;
 let usuarioActual = null;
-let pistaMostrada = false; // Para controlar si ya se mostró la pista en el enigma actual
+let pistaMostrada = false;
 
-/// Actualizar opciones de usuario
+// Actualizar opciones de usuario
 function actualizarUsuarios() {
     const selectExistente = document.getElementById("seleccion-usuario");
     const selectEliminar = document.getElementById("eliminar-usuario");
@@ -91,11 +90,18 @@ document.getElementById("eliminar-usuario-btn").addEventListener("click", () => 
 
     if (index) {
         const eliminado = usuarios.splice(index, 1); // Elimina del array
-        localStorage.removeItem(`${eliminado[0].nombre}_progreso`); // Borra progreso
-        localStorage.removeItem(`${eliminado[0].nombre}_enigmaActual`); // Borra estado del enigma
-        localStorage.removeItem(`${eliminado[0].nombre}_pistas`); // Borra uso de pistas
+        const nombreUsuario = eliminado[0].nombre;
+        localStorage.removeItem(`${nombreUsuario}_progreso`); // Borra progreso
+        localStorage.removeItem(`${nombreUsuario}_enigmaActual`); // Borra estado del enigma
+        localStorage.removeItem(`${nombreUsuario}_pistas`); // Borra uso de pistas
+
+        // Remover todas las pistas mostradas para todos los enigmas
+        enigmas.forEach((_, enigmaIndex) => {
+            localStorage.removeItem(`${nombreUsuario}_pistaMostrada_${enigmaIndex}`);
+        });
+
         localStorage.setItem("usuarios", JSON.stringify(usuarios));
-        alert(`Usuario "${eliminado[0].nombre}" y su progreso han sido eliminados.`);
+        alert(`Usuario "${nombreUsuario}" y su progreso han sido eliminados.`);
         actualizarUsuarios();
     } else {
         alert("Selecciona un usuario para eliminar.");
@@ -113,6 +119,7 @@ document.getElementById("volver-menu").addEventListener("click", () => {
         document.getElementById("login-password").value = "";
     }
 });
+
 // Cargar enigmas
 function cargarEnigma() {
     document.getElementById("pregunta").textContent = enigmas[enigmaActual].pregunta;
@@ -147,8 +154,7 @@ document.getElementById("verificar").addEventListener("click", () => {
         } else {
             alert("¡Has completado el Cryptex!");
             document.getElementById("enigmas").style.display = "none";
-            document.getElementById("final").style.display = "block";
-            document.getElementById("palabra-signos").innerHTML = progreso.map(l => signos[l]).join(" ");
+            mostrarIngresoPalabra();
         }
     } else {
         alert("Respuesta incorrecta.");
@@ -173,6 +179,32 @@ document.getElementById("pista").addEventListener("click", () => {
     } else {
         alert("Ya has usado la pista para este enigma.");
     }
+});
+
+// Mostrar la ventana de ingreso de palabra
+function mostrarIngresoPalabra() {
+    document.getElementById("enigmas").style.display = "none";
+    document.getElementById("ingreso-palabra").style.display = "block";
+    //Generar la palabra formada por signos
+    const palabraSignos = progreso.map(letra => signos[letra] || "_").join(" ");
+    document.getElementById("palabra-signos").textContent = palabraSignos;
+}
+
+// Verificar la palabra ingresada y mostrar el código final
+document.getElementById("finalizar").addEventListener("click", () => {
+    const palabraIngresada = document.getElementById("palabra-final").value.toUpperCase();
+    if (palabraIngresada === palabraCryptex) {
+        document.getElementById("ingreso-palabra").style.display = "none";
+        document.getElementById("codigo-final").style.display = "block";
+    } else {
+        alert("La palabra ingresada es incorrecta. Inténtalo de nuevo.");
+    }
+});
+
+// Volver al menú desde la ventana final
+document.getElementById("volver-menu-final").addEventListener("click", () => {
+    document.getElementById("codigo-final").style.display = "none";
+    document.getElementById("menu").style.display = "block";
 });
 
 // Inicializar
