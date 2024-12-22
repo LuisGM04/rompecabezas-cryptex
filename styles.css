@@ -7,7 +7,7 @@ body {
     color: #4a3f35;
 }
 
-.contenedor-menu, .contenedor-enigmas, .contenedor-final {
+.contenedor-menu, .contenedor-enigmas, .contenedor-final, .contenedor-ingreso-palabra, .contenedor-codigo-final {
     background: rgba(255, 255, 255, 0.95);
     padding: 20px;
     border-radius: 10px;
