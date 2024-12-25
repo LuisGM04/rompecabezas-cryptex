@@ -1,3 +1,4 @@
+// script.js
 const palabraCryptex = "CONSTELACION";
 const signos = {
     A: "▲", B: "■", C: "●", D: "♦", E: "★", F: "♣", G: "♠", H: "☀", I: "☽",
@@ -6,18 +7,18 @@ const signos = {
 };
 
 const enigmas = [
-    { pregunta: "Soy un número y mi doble es 4, ¿quién soy?", respuesta: "2", pista: "Es un número." },
-    { pregunta: "Tengo raíces, pero no soy un árbol. ¿Qué soy?", respuesta: "planta", pista: "Es algo que puede crecer en una maceta." },
-    { pregunta: "El hermano del padre de tu tío, ¿quién es?", respuesta: "abuelo", pista: "Es un miembro de la familia." },
-    { pregunta: "Siempre subo pero nunca bajo, ¿quién soy?", respuesta: "edad", pista: "Es algo que cambia con el tiempo." },
-    { pregunta: "Tengo cuello pero no cabeza, ¿qué soy?", respuesta: "botella", pista: "Sirve para guardar líquidos." },
-    { pregunta: "Mientras más seco, más mojo. ¿Qué soy?", respuesta: "toalla", pista: "Se usa después de bañarse." },
-    { pregunta: "Siempre me verás al principio de todo. ¿Qué soy?", respuesta: "a", pista: "Es la primera letra del abecedario." },
+    { pregunta: "¿Cuántos lunares tiene tu novio en el cuerpo?", respuesta: "156", pista: "Cuéntalos ;)" },
     { pregunta: "Me puedes romper sin tocarme. ¿Qué soy?", respuesta: "promesa", pista: "Es algo que haces con palabras." },
+    { pregunta: "Siempre subo pero nunca bajo", respuesta: "edad", pista: "Todas las personas la tienen." },
+    { pregunta: "La Plaza Mayor, ¡que icónico sitio de Madrid! Pero, ¿cuántos ventanales tendrá? Ve y cuéntalos.", respuesta: "371", pista: "Cuenta despacio." },
     { pregunta: "Te sigo a donde vayas, pero no soy un ser vivo. ¿Qué soy?", respuesta: "sombra", pista: "Aparece bajo el sol." },
-    { pregunta: "Cuento cada segundo y no tengo manos. ¿Qué soy?", respuesta: "reloj", pista: "Está presente en todas las casas." },
+    { pregunta: "Me encanta jugar a los bolos, pero no se si cabríamos todos en las pistas. ¿Cuántas pistas de bolos tiene el Equinoccio? Cuéntalas, ve a jugar una partida y pregunta a tu acompañante por un número, la respuesta es la suma de las pistas más el número proporcionado", respuesta: "793", pista: "Juega." },
+    { pregunta: "Tengo cuello pero no cabeza.", respuesta: "botella", pista: "Puedes guardar cosas en eso." },
+    { pregunta: "La cena del siglo. Eres una espía y te han invitado a una cena. Ve y averigua cual es el código de la caja fuerte, la respuesta serán los 4 dígitos que tendrás que sacarle al mafioso.", respuesta: "2759", pista: "Habla con él." },
+    { pregunta: "En una sala hay un reloj mágico que tiene tres manecillas: una azul, una roja y una verde. Cada vez que la manecilla azul se mueve, la roja también se mueve, pero al doble de velocidad. Cada vez que la manecilla verde se mueve, la azul también lo hace, pero al triple de velocidad. En una vuelta completa de la manecilla verde, ¿cuántas vueltas dará la manecilla roja?", respuesta: "6", pista: "Piensa en proporciones y velocidades. ¿Qué pasa si cada manecilla influye en las otras?" },
+    { pregunta: "Me pregunto cuántas columnas tendrá el patio central del Palacio Real. Ve al palacio, haz una visita y sitúate en el centro y cuénta cuantas ves desde allí (solo ten en cuenta las columnas que más resalten). La respuesta será multiplicando el número de columnas por 3.", respuesta: "66", pista: "Ponte en el centro y cuenta." },
     { pregunta: "Soy más fuerte que el acero pero al agua le temo. ¿Qué soy?", respuesta: "papel", pista: "Se usa para escribir." },
-    { pregunta: "Soy pequeño, redondo, pero sin mí no puedes caminar. ¿Qué soy?", respuesta: "zapato", pista: "Se encuentra en los pies." }
+    { pregunta: "¿Cuántas playas tienen las Islas Cíes? Ve a visitarlas para contarlas", respuesta: "9", pista: "Ve a las Cíes" }
 ];
 
 // Variables
